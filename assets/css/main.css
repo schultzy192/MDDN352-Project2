@@ -1,0 +1,343 @@
+/* Stefan Schultz, MDDN Project 2, April 2016 */
+
+/* COLOR PALETTE
+    Whether Blue = #36B3FF
+    Body Text Gray = #233343
+    Mid Gray Accent = #5E8293
+    Light Blue Accent = #F4FCFF
+    Light Body Gray = #D6DEDE
+*/
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    overflow-x: hidden;
+}
+
+#header {
+    position: fixed;
+    height: 45px;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-color: #36B3FF;
+    z-index: 1;
+}
+
+#headerLogo {
+    position: absolute;
+    height: 55px;
+    top: -3px;
+}
+
+.headerCaption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -12px;
+    
+    text-align: center;
+    color: white;
+    font-weight: 400;
+    font-size: 16pt;
+}
+
+.sectionTitle {
+    padding-left: 20px;
+    margin-top: 20px;
+    color: #5E8293;
+    letter-spacing: 1pt;
+    font-weight: 700;
+}
+
+#yourCalendarContainer > .sectionTitle {
+    position: absolute;
+    margin-top: 140px;
+}
+
+#rightNowContainer {
+    position: relative;
+    top: 45px;
+    height: 220px;
+    width: 70%;
+    border-bottom: solid 1px #36B3FF;
+}
+
+#nowLocationIcon {
+    position: absolute;
+    height: 32px;
+    margin-left: 30px;
+    margin-top: 135px;
+}
+
+.location {
+    position: absolute;
+    margin-left: 65px;
+    margin-top: 140px;
+    color: #36B3FF;
+    font-weight: 600;
+}
+
+.dataProvider {
+    position: absolute;
+    margin-left: 300px;
+    margin-top: 142px;
+    color: #D6DEDE;
+}
+
+.dataProvider > a {
+    color: #D6DEDE;
+}
+
+#nowWeatherIcon {
+    position: absolute;
+    width: 100px;
+    margin-top: 0px;
+    margin-left: 20px;
+    
+}
+
+.nowTemp {
+    position: absolute;
+    color: #36B3ff;
+    text-align: left;
+    font-weight: 100;
+    font-size: 80pt;
+    margin-top: -20px;
+    margin-left: 150px;
+}
+
+.currentForecast {
+    position: absolute;
+    width: 200px;
+    margin-left: 500px;
+    margin-top: 35px;
+    font-size: 10pt;
+    font-weight: 400;
+    color: #233343;
+}
+
+#windIcon {
+    position: absolute;
+    width: 50px;
+    margin-left: 320px;
+    margin-top: 10px;
+}
+
+.windForecast {
+    position: absolute;
+    width: 200px;
+    margin-left: 320px;
+    margin-top: 60px;
+    font-size: 16pt;
+    font-weight: 600;
+    color: #36B3FF;
+}
+
+#yourCalendarContainer {
+    position: relative;
+    margin-top: -19.8em;
+    left: 70%;
+    right: 100%;
+    height: 40em;
+    border-left: solid 1px #36B3FF;
+}
+
+#weatherWarningsContainer {
+    position: relative;
+    top: 70%;
+    left: 70%;
+    right: 0;
+    bottom: 0;
+    
+}
+
+#weatherMapsContainer {
+    position: relative;
+    left: 0;
+    height: 30em;
+    margin-top: 0;
+    right: 30%;
+    bottom: 0;
+    
+}
+
+#tabletBreak {
+    text-align: center;
+    margin-top: 25%;
+    display: none;
+}
+
+#mobileBreak {
+    text-align: center;
+    margin-top: 25%;
+    display: none;
+}
+
+#footer {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background-color: #36B3FF;
+    height: 8em;
+}
+
+#footerLogo {
+    position: absolute;
+    width: 15em;
+    margin-top: 1.3em;
+    margin-left: 2em;
+}
+
+.footerText {
+    position: absolute;
+    width: 35%;
+    margin-left: 22em;
+    margin-top: 2.9em;
+    color: #F4FCFF;
+}
+
+#footerLinks {
+    margin-top: 3em;
+}
+
+#privacyLink {
+    display: inline;
+    padding: 0.25em;
+    margin-left: 65%; 
+    text-decoration: underline;
+    color: white;
+}
+
+#termsLink {
+    display: inline;
+    padding: 0.25em;
+    padding-left: 1em;
+    text-decoration: underline;
+    color: white;
+}
+
+#supportLink {
+    display: inline;
+    padding: 0.25em;
+    padding-left: 1em;
+    text-decoration: underline;
+    color: white;
+}
+
+#terms {
+    display: none;
+    transition: 0.2s;
+}
+
+#privacy {
+    display: none;
+    transition: 0.2s;
+}
+
+#overlayDim {
+    background-color: #333;
+    opacity: 0.7;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    transition: 0.2s;
+}
+
+.legalWindow {
+    position: fixed;
+    overflow-y: auto;
+    background-color: white;
+    width: 600px;
+    height: 400px;
+    left: calc(50% - 300px);
+    top: 150px;
+    z-index: 3;
+    box-shadow: 0px 0px 60px 10px rgba(0,0,0,0.75);
+    transition: 0.2s;
+}
+
+.legalHead {
+    position: fixed;
+    width: 600px;
+    height: 60px;
+    left: calc(50% - 300px);
+    background-color: #36B3FF;
+    z-index: 1;
+}
+
+.legalLogo {
+    position: absolute;
+    width: 50px;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.legalHeading {
+    position: relative;
+    text-align: center;
+    top: -14px;
+    font-weight: 300;
+    font-size: 20pt;
+    color: white;
+}
+
+.legalClose {
+    position: relative;
+    background-image: url(/assets/images/closeIcon.png);
+    width: 48px;
+    height: 48px;
+    top: -81px;
+    left: 545px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.legalTextContainer {
+    position: relative;
+    width: 90%;
+    color: #233343;
+    left: calc(50% - 45%);
+    top: 60px;
+    overflow-y: scroll;
+}
+
+/* TABLET CSS */
+
+@media all and (max-width: 1025px) {
+    
+    #tabletBreak {
+        display: block;
+    }
+    
+    .headerCaption {
+        text-align: right;
+        right: 10px;
+    }
+}
+
+/* MOBILE CSS */
+
+@media all and (max-width: 600px) {
+
+    .headerCaption {
+        display: none;
+    }
+    
+    #headerLogo {
+        left: -80px;
+        margin-left: 50%;
+    }
+    
+    #mobileBreak {
+        display: block;
+    }
+    
+    #tabletBreak {
+        display: none;
+    }
+}

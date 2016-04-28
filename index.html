@@ -1,0 +1,98 @@
+<!doctype HTML>
+<!-- Stefan Schultz, 2016, MDDN 352 Project 2 - Whether? -->
+
+<html lang="en">
+<head>
+    <title>Whether? - Your Personal Weather Service</title>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+    <link rel="apple-touch-icon" href="/assets/images/touch-icon.png">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyByQSuSAL_NCCTvVTJ0XS3rYFNcpPvBG2w&libraries=places"></script>
+    <script src="https://apis.google.com/js/client.js?onload=checkAuth"></script>
+    <script src="/assets/js/script.js"></script>
+    <script src="/assets/js/googleCal.js"></script>
+    
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,300,600,700,900' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <h1 id="tabletBreak">[TABLET]</h1>
+    <h1 id="mobileBreak">[MOBILE]</h1>
+    
+    <div id="header">
+        <img id="headerLogo" src="/assets/images/mainLogo-white.png">
+        <h3 class="headerCaption">We've had a little loading problem, things might not work properly!</h3>
+    </div>
+    
+    <div id="rightNowContainer">
+        <h5 class="sectionTitle">RIGHT NOW...</h5>
+        <img id="nowWeatherIcon" src="/assets/images/sadface.jpg">
+        <h1 class="nowTemp">- &deg;</h1>
+        <img id="nowLocationIcon" src="/assets/images/locationIcon-blue.png">
+        <h4 class="location">We can't get your location.</h4>
+        <h5 class="dataProvider">Data supplied by the <a href="http://www.metservice.com" target="_blank">MetService</a></h5>
+        <h3 class="currentForecast">Sorry, something went wrong and we can't load this right now.</h3>
+        <img id="windIcon" src="/assets/images/wind.png">
+        <h3 class="windForecast">Sorry, wind info unavailable.</h3>
+    </div>
+    
+    <div id="yourCalendarContainer">
+        <h5 class="sectionTitle">YOUR CALENDAR...</h5>
+    </div>
+    
+    <div id="weatherWarningsContainer">
+        <h5 class="sectionTitle">WEATHER WARNINGS...</h5>
+    </div>
+    
+    <div id="weatherMapsContainer">
+        <h5 class="sectionTitle">WEATHER MAPS...</h5>
+    </div>
+    
+    <div id="footer">
+        <img id="footerLogo" src="/assets/images/mainLogo-white.png">
+        <h5 class="footerText">&copy; Stefan Schultz, Victoria University of Wellington - School of Design.<br>All rights reserved.<br>Created as Project 2 for MDDN 352: Mobile Media</h5>
+        <div id="footerLinks">
+            <div id="privacyLink">Privacy Policy</div>
+            <div id="termsLink">Terms & Conditions</div>
+            <div id="supportLink">Support</div>
+        </div>
+    </div>
+    
+    <div id="terms">
+        <div id="overlayDim"></div>
+        <div class="legalWindow">
+            <div class="legalHead">
+                <img class="legalLogo" src="/assets/images/touch-icon.png">
+                <h3 class="legalHeading">Terms &amp; Conditions</h3>
+                <div class="legalClose"></div>
+            </div>
+            <div class="legalTextContainer">
+                <p class="legalText">This site and its' original content, features, functionality, and design elements as well as specifics of the concept are owned by Stefan Schultz, and are protected by international copyright and all other relevant intellectual property or proprietary rights laws. The year of creation and initial copyright, as listed at the bottom of the site, is 2016. All rights are reserved.<br><br>Whether is a service created for academic purposes, in pursuit of a university degree. As such it is delivered with limited liability, under no promises of complete functionality, error-free operation, accessibility, or any degree of usability.<br><br>This service should be considered an experiment in development, and therefore provided with no warranty or guarantee, and should be used with no expectation of polish or completion. Unless I get an A+ (which I totally should, hint, hint), consider it a work in progress - a construction site with contractors on strike. We are not responsible for any interruptions to the service.<br><br>Any one considered to be using the service in an improper, abusive or otherwise malicious intent may have their access to the service terminated, for any length of time, unspecified by us, without cause or notice. Any information that may have been associated with you, regardless of service functionality or design at the time of use, will be destroyed. Legal action may be pursued if suitable cause is found.<br><br>The incomplete, in-progress, and non-final nature of this service means it should not be used in any mission critical environment or capacity. Do not rely on this service where 100% accurate, reliable, and continuously available data is needed. Do not use Whether in any situation that failure of the service could result in personal injury, death, or severe physical or environmental damage. This includes but is not limited to the operation of nuclear facilities, aircraft navigation or communication, air traffic control, life support, or weapons systems. Do not use Whether for anything illegal or immoral, such as the design or construction of missiles, or nuclear, chemical or biological weapons. That last line is actually from the iTunes software license, I kid you not - go look if you don’t believe me! I mean, good luck using iTunes to even play a song, let alone build a bomb.<br><br>This service is currently provided free of charge. We reserve the right to, without any notice, begin charging any fee we consider appropriate for continued or expanded access or use of this service. Any use of this service during the first full moon of August in the year two than sand and sixteen, anno domini, also equates to an agreement to part with your first born child if so requested by us, or any parent company, subsidiary or spin off at the time.<br><br>For user data and privacy, please refer to our Privacy Policy, as available at bottom of each page of this service.<br><br>In the event of force majeure (“Act of God” in some, religiously insensitive parlance), we do not guarantee this service will continue to function, be available, accurate, or reliable. Force Majeure covers any event that can be considered beyond the reasonable control of Whether, including but not limited to war, nuclear attack, civil unrest, severe natural disaster (such as but no limited to tornado, hurricane, earthquake, volcanic eruption or tsunami), a cat walking over the keyboard or other such humanly uncontrollable events.<br><br>This service is operated from New Zealand, and is, along with these terms and conditions, governed by the laws of New Zealand, so there.
+    </p>
+            </div>
+        </div>
+    </div>
+    
+    <div id="privacy">
+        <div id="overlayDim"></div>
+        <div class="legalWindow">
+            <div class="legalHead">
+                <img class="legalLogo" src="/assets/images/touch-icon.png">
+                <h3 class="legalHeading">Privacy Policy</h3>
+                <div class="legalClose"></div>
+            </div>
+            <div class="legalTextContainer">
+                <p class="legalText">Whether is a deeply personal service, integrated into your life like no other weather platform. This creates a requirement for access to some personal information and data, which can be a touchy subject for a lot of people.<br><br>Because Whether is a free service, created for academic purposes, we have no requirement or desire to make money, and have no use for provided information about our users. To put it bluntly, we don’t care what your name is, where you are, or what’s on your calendar. That’s your business, not ours.<br><br>To help keep you feeling safe and keep your data private. we don’t call it back. We don’t see your location, your calendar, even your name or any other information you might supply through normal use of our service. It’s not sent back to us, but managed locally and through our third party providers. We don’t have searches, or cookies, or other stored or tracked data. No ads, no targeted marketing, and no desire or use for retaining any personal information.<br><br>We use Google’s APIs to access data you have already given them. We don’t see it, it stays strictly between Google and you locally. Your name and calendar are never visible to us. We use a Google Maps API to determine your location; as such your geolocation coordinates are called back to them. You can view Google’s extensive Privacy Policies here: https://www.google.com/policies/privacy/.<br><br>Your location is also shared with OpenWeatherMap, who provide the APIs and information about your weather we need to run this service. Unfortunately for super privacy conscious folk out there (hi, Walter!) we really do need at least your location to work.<br><br>Location information is kept wholly anonymous, it is sent in a simple, non-unique manner to our API providers and partners. Even to Google, your coordinates are sent independently of your account requests.<br><br>If we are legally compelled to provide user data, we shall of course comply to the extent we feel is requested and absolutely necessary; however we retain limited data of use to law enforcement.<br><br>We believe that personalised delivery of information is the future, and trust should not be a consideration or concern for users to access this vision. It should be an unconscious expectation that is never challenged by a service. Whether is proud to spearhead this future of safe, carefree, personal services.<br><br>For further information and to query any element of this policy, please use the Support link at the bottom of any page.
+    </p>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
