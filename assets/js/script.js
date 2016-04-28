@@ -47,7 +47,7 @@ $(document).ready(function(){
                                 } else if (nowConditions = "Showers") {
                                     $('#nowWeatherIcon').attr("src", "/MDDN352-Project2/assets/images/weatherIcons/scattered-showers.tiff");
                                 } else {
-                                    $('#nowWeatherIcon').attr("src", "/MDDN352-Project2/assets/images/weatherIcons/sadface.jpg");
+                                    $('#nowWeatherIcon').attr("src", "/MDDN352-Project2/assets/images/sadface.jpg");
                                 }
                                 var currentForecast = json.days[0].forecast;
                                 $('.currentForecast').text(currentForecast);
