@@ -237,6 +237,7 @@ body {
     height: 40em;
     border-left: solid 1px #36B3FF;
     border-bottom: solid 1px #36B3FF;
+    overflow-y: scroll;
 }
 
 #yourCalendarContainer > .sectionTitle {
