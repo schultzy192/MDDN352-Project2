@@ -40,7 +40,6 @@ $(document).ready(function(){
                             $.getJSON(metServiceForecast, function (json) {
                                 var nowConditions = json.days[0].forecastWord;
                                 console.log('Forecast: ' + nowConditions);
-<<<<<<< HEAD
                                 if (nowConditions === "Fine") {
                                     $('#nowWeatherIcon').attr("src", "/MDDN352-Project2/assets/images/weatherIcons/mostly-sunny.png");
                                 } else if (nowConditions === "Partly cloudy") {
@@ -57,7 +56,6 @@ $(document).ready(function(){
                                     $('#nowWeatherIcon').attr("src", "/MDDN352-Project2/assets/images/weatherIcons/windy.png"); 
                                 } else {
                                     $('#nowWeatherIcon').attr("src", "/MDDN352-Project2/assets/images/weatherIcons/sadface.jpg");
-=======
                                 if (nowConditions = "Fine") {
                                     $('#nowWeatherIcon').attr("src", "/MDDN352-Project2/assets/images/weatherIcons/mostly-sunny.tiff");
                                 } else if (nowConditions = "Partly cloudy") {
@@ -66,7 +64,6 @@ $(document).ready(function(){
                                     $('#nowWeatherIcon').attr("src", "/MDDN352-Project2/assets/images/weatherIcons/scattered-showers.tiff");
                                 } else {
                                     $('#nowWeatherIcon').attr("src", "/MDDN352-Project2/assets/images/sadface.jpg");
->>>>>>> origin/gh-pages
                                 }
                                 var currentForecast = json.days[0].forecast;
                                 $('.currentForecast').text(currentForecast);
