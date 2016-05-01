@@ -68,8 +68,6 @@ $(document).ready(function(){
                                 var currentForecast = json.days[0].forecast;
                                 $('.currentForecast').text(currentForecast);
                             });
-                            
-						}
 					}
           }
       }
