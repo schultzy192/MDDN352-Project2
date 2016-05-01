@@ -8,42 +8,70 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <link rel="stylesheet" type="text/css" href="/MDDN352-Project2/assets/css/main.css">
     
-    <link rel="icon" type="image/png" href="/assets/images/favicon.png">
-    <link rel="apple-touch-icon" href="/assets/images/touch-icon.png">
+    <link rel="icon" type="image/png" href="/MDDN352-Project2/assets/images/favicon.png">
+    <link rel="apple-touch-icon" href="/MDDN352-Project2/assets/images/touch-icon.png">
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyByQSuSAL_NCCTvVTJ0XS3rYFNcpPvBG2w&libraries=places"></script>
     <script src="https://apis.google.com/js/client.js?onload=checkAuth"></script>
-    <script src="/assets/js/script.js"></script>
-    <script src="/assets/js/googleCal.js"></script>
+    <script src="/MDDN352-Project2/assets/js/script.js"></script>
+    <script src="/MDDN352-Project2/assets/js/googleCal.js"></script>
     
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,300,600,700,900' rel='stylesheet' type='text/css'>
 </head>
 <body>
-    <h1 id="tabletBreak">[TABLET]</h1>
-    <h1 id="mobileBreak">[MOBILE]</h1>
     
+    <div id="body">
     <div id="header">
-        <img id="headerLogo" src="/assets/images/mainLogo-white.png">
+        <img id="headerLogo" src="/MDDN352-Project2/assets/images/mainLogo-white.png">
         <h3 class="headerCaption">We've had a little loading problem, things might not work properly!</h3>
     </div>
+
+    <div id="googleAuthorize" display="block">
+        <h3>Whether needs to access your calendar.</h3>
+        <p class="copy">Please sign in or allow access to your Google Account to sync your Calendar with Whether.</p>
+        <p class="subCopy">This is to allow personalised weather information for your day and all the events in it. If you choose not to connect to Google, you will only get the current weather conditions for your location.</p>
+         <p class="subCopy">If you dont wish to use your own Google Account, please use this demo one (enter the details without the quotation marks):</p>
+         <p class="subCopy">Email: "stefan.s.mddn352@gmail.com"</p>
+         <p class="subCopy">Password: "mddn 352"</p>
+        <div id="authorize-button" onclick="handleAuthClick(event)">Authorize</div>
+            <div id="authContinueButton">Continue without connecting...</div>
+        <div id="authPadding"></div>
+    </div>
+        
+        <div id="mobileWelcome">
+            <h3 class="mobileWelcomeCaption">We've had a little loading problem, things might not work properly!</h3>
+        </div>
     
     <div id="rightNowContainer">
-        <h5 class="sectionTitle">RIGHT NOW...</h5>
-        <img id="nowWeatherIcon" src="/assets/images/sadface.jpg">
+        <div id="nowSectionHeader">
+            <h5 class="sectionTitle">RIGHT NOW...</h5>
+            <img id="nowCloseArrow" class="closeArrow" src="/MDDN352-Project2/assets/images/arrowUp.png">
+            <img id="nowOpenArrow" class="openArrow" src="/MDDN352-Project2/assets/images/arrowDown.png">
+        </div>
+        <img id="nowWeatherIcon" src="/MDDN352-Project2/assets/images/sadface.jpg">
         <h1 class="nowTemp">- &deg;</h1>
-        <img id="nowLocationIcon" src="/assets/images/locationIcon-blue.png">
+        <img id="nowLocationIcon" src="/MDDN352-Project2/assets/images/locationIcon-blue.png">
         <h4 class="location">We can't get your location.</h4>
         <h5 class="dataProvider">Data supplied by the <a href="http://www.metservice.com" target="_blank">MetService</a></h5>
         <h3 class="currentForecast">Sorry, something went wrong and we can't load this right now.</h3>
-        <img id="windIcon" src="/assets/images/wind.png">
+        <img id="windIcon" src="/MDDN352-Project2/assets/images/wind.png">
         <h3 class="windForecast">Sorry, wind info unavailable.</h3>
+    </div>
+    <div id="rightNowCollapsed">
+        <h5 class="sectionTitle">RIGHT NOW...</h5>
+        <img id="closeArrow" src="/MDDN352-Project2/assets/images/arrowUp.png">
     </div>
     
     <div id="yourCalendarContainer">
         <h5 class="sectionTitle">YOUR CALENDAR...</h5>
+        <img id="calCloseArrow" class="closeArrow" src="/MDDN352-Project2/assets/images/arrowUp.png">
+        <pre id="output"></pre>
+        <div id="calOne">
+            <h4 class="eventName"></h4>
+        </div>
     </div>
     
     <div id="weatherWarningsContainer">
@@ -52,10 +80,19 @@
     
     <div id="weatherMapsContainer">
         <h5 class="sectionTitle">WEATHER MAPS...</h5>
+        <select name="layerPick" id="layerPick">
+            <option value="" disabled>Select a Map Layer...</option>
+            <option value="cloudMap" selected data-src="/MDDN352-Project2/assets/images/maps/cloudMap.png">Clouds</option>
+            <option value="pressureMap" data-src="/MDDN352-Project2/assets/images/maps/pressureMap.png">Pressure</option>
+            <option value="rainMap" data-src="/MDDN352-Project2/assets/images/maps/rainMap.png">Rain Radar</option>
+            <option value="tempMap" data-src="/MDDN352-Project2/assets/images/maps/tempMap.png">Temperature</option>
+            <option value="windMap" data-src="/MDDN352-Project2/assets/images/maps/windSpeedMap.png">Wind Speed</option>
+        </select>
+        <img id="mapImage" src="/MDDN352-Project2/assets/images/maps/cloudMap.png">
     </div>
-    
+        
     <div id="footer">
-        <img id="footerLogo" src="/assets/images/mainLogo-white.png">
+        <img id="footerLogo" src="/MDDN352-Project2/assets/images/mainLogo-white.png">
         <h5 class="footerText">&copy; Stefan Schultz, Victoria University of Wellington - School of Design.<br>All rights reserved.<br>Created as Project 2 for MDDN 352: Mobile Media</h5>
         <div id="footerLinks">
             <div id="privacyLink">Privacy Policy</div>
@@ -63,12 +100,13 @@
             <div id="supportLink">Support</div>
         </div>
     </div>
+        </div>
     
     <div id="terms">
         <div id="overlayDim"></div>
         <div class="legalWindow">
             <div class="legalHead">
-                <img class="legalLogo" src="/assets/images/touch-icon.png">
+                <img class="legalLogo" src="/MDDN352-Project2/assets/images/touch-icon.png">
                 <h3 class="legalHeading">Terms &amp; Conditions</h3>
                 <div class="legalClose"></div>
             </div>
@@ -83,7 +121,7 @@
         <div id="overlayDim"></div>
         <div class="legalWindow">
             <div class="legalHead">
-                <img class="legalLogo" src="/assets/images/touch-icon.png">
+                <img class="legalLogo" src="/MDDN352-Project2/assets/images/touch-icon.png">
                 <h3 class="legalHeading">Privacy Policy</h3>
                 <div class="legalClose"></div>
             </div>

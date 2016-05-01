@@ -69,7 +69,8 @@ var CLIENT_ID = '999948733511-ihgpusqrjt7bkag7pdglmc5oqrtru6as.apps.googleuserco
             request.execute(function(resp) {
                 console.log('Retrieved profile for:' + resp.name.givenName);
                 var nameStr = resp.name.givenName;
-                $('#userName').text("Good " + msg + nameStr + "!");
+                $('.headerCaption').text("Good " + msg + nameStr + "!");
+                $('.mobileWelcomeCaption').text("Good " + msg + nameStr + "!");
             });
         });
     }
@@ -120,5 +121,6 @@ var CLIENT_ID = '999948733511-ihgpusqrjt7bkag7pdglmc5oqrtru6as.apps.googleuserco
         var textContent = document.createTextNode(message + '\n');
         pre.appendChild(textContent);
       }
+
 
 
