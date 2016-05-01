@@ -56,14 +56,6 @@ $(document).ready(function(){
                                     $('#nowWeatherIcon').attr("src", "/MDDN352-Project2/assets/images/weatherIcons/windy.png"); 
                                 } else {
                                     $('#nowWeatherIcon').attr("src", "/MDDN352-Project2/assets/images/weatherIcons/sadface.jpg");
-                                if (nowConditions = "Fine") {
-                                    $('#nowWeatherIcon').attr("src", "/MDDN352-Project2/assets/images/weatherIcons/mostly-sunny.tiff");
-                                } else if (nowConditions = "Partly cloudy") {
-                                    $('#nowWeatherIcon').attr("src", "/MDDN352-Project2/assets/images/weatherIcons/partly-cloudy-day.tiff");
-                                } else if (nowConditions = "Showers") {
-                                    $('#nowWeatherIcon').attr("src", "/MDDN352-Project2/assets/images/weatherIcons/scattered-showers.tiff");
-                                } else {
-                                    $('#nowWeatherIcon').attr("src", "/MDDN352-Project2/assets/images/sadface.jpg");
                                 }
                                 var currentForecast = json.days[0].forecast;
                                 $('.currentForecast').text(currentForecast);
